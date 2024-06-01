@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="frame">
+
+        <input id="display">
+        <div class="line">
+            <button onclick="clearDisplay('C')" class="button" style="color: red;">C</button>
+            <button onclick="ToDisplay('()')" class="button" style="color: rgb(0, 255, 17);">()</button>
+            <button onclick="ToDisplay('%')" class="button" style="color: rgb(0, 255, 17);"> % </button>
+            <button onclick="ToDisplay('/')" class="button" style="color: rgb(0, 255, 17);">/</button>
+        </div>
+        <div class=" line">
+            <button onclick="ToDisplay('7')" class="button">7</button>
+            <button onclick="ToDisplay('8')" class="button">8</button>
+            <button onclick="ToDisplay('9')" class="button">9</button>
+            <button onclick="ToDisplay('*')" class="button" style="color: rgb(0, 255, 17);">*</button>
+        </div>
+        <div class="line">
+            <button onclick="ToDisplay('4')" class="button">4</button>
+            <button onclick="ToDisplay('5')" class="button">5</button>
+            <button onclick="ToDisplay('6')" class="button">6</button>
+            <button onclick="ToDisplay('-')" class="button" style="color: rgb(0, 255, 17);">-</button>
+        </div>
+        <div class="line">
+            <button onclick="ToDisplay('1')" class="button">1</button>
+
+            <button onclick="ToDisplay('2')" class="button">2</button>
+            <button onclick="ToDisplay('3')" class="button">3</button>
+            <button onclick="ToDisplay('+')" class="button" style="color: rgb(0, 255, 17);">+</button>
+
+        </div>
+        <div class="line">
+            <button onclick="ToDisplay('-')" class="button">+/-</button>
+            <button onclick="ToDisplay('0')" class="button">0</button>
+            <button onclick="ToDisplay('.')" class="button">.</button>
+            <button onclick="calculate('=')" class="button" style="background-color: rgb(0, 255, 17);">=</button>
+
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById("display");
+        function ToDisplay(input) {
+            display.value += input;
+        }
+        function clearDisplay() {
+            display.value = "";
+        }
+        function calculate() {
+            display.value = eval(display.value);
+        }
+
+    </script>
+</body>
+
+</html>
